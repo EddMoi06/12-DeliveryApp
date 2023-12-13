@@ -1,0 +1,61 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.app{
+    margin-top: v.$separacion;
+    @include m.tablet {
+        @include m.grid(2, 3rem)
+    }
+
+    &__datos{
+        background-color: v.$primario;
+        padding: 5rem;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__texto{
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &__formulario{
+        label{
+            display: block;
+            color: v.$blanco;
+            text-transform: uppercase;
+            margin: 1rem 0;
+        }
+        input{
+            padding: 1.5rem;
+            border: none;
+            width: 100%;
+        }
+
+        input[type="submit"]{
+            @include m.boton(v.$secundario, v.$blanco);
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__logo{
+        width: 50%;
+        margin: 5rem auto 0 auto;
+        @include m.tablet {
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+
+.fondo{
+    background-image: url(../img/fondo.svg);
+    height: 70rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
